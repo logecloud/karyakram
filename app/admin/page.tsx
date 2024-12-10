@@ -1,9 +1,8 @@
-'use client'
+import { getServerSession } from "next-auth/next"
+import { authOptions } from "@/app/lib/auth"
 
-import { useAuth } from "@/app/hooks/useAuth"
-
-export default function AdminPage() {
-  const { session } = useAuth(['ADMIN', 'SUPER_ADMIN'])
+async function AdminPage() {
+  const session = await getServerSession(authOptions)
 
   if (!session) return null
 
@@ -13,4 +12,6 @@ export default function AdminPage() {
       {/* Admin content */}
     </div>
   )
-} 
+}
+
+export default AdminPage 

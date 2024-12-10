@@ -2,8 +2,9 @@
 
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useCallback } from 'react'
+import { Suspense } from 'react'
 
-export default function EventSearch() {
+function EventSearchContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
 
@@ -48,5 +49,13 @@ export default function EventSearch() {
         </svg>
       </button>
     </div>
+  )
+}
+
+export default function EventSearch() {
+  return (
+    <Suspense fallback={<div>Loading search...</div>}>
+      <EventSearchContent />
+    </Suspense>
   )
 } 

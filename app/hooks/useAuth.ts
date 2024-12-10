@@ -17,7 +17,7 @@ export function useAuth(allowedRoles?: Role[]) {
   useEffect(() => {
     if (status === "loading") return
 
-    if (!session) {
+    if (!session || !session.user) {
       router.push('/auth/signin')
     } else if (allowedRoles && !allowedRoles.includes(session.user.role)) {
       router.push('/')

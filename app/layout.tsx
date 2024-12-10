@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import Image from "next/image";
 import AuthButton from "./components/AuthButton";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,7 +19,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* Navigation Bar */}
         <nav className="border-b bg-white/80 backdrop-blur-md fixed w-full z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div className="flex items-center justify-between">
@@ -56,8 +54,6 @@ export default function RootLayout({
             </div>
           </div>
         </nav>
-
-        {/* Add padding to account for fixed navbar */}
         <div className="pt-20">
           {children}
         </div>

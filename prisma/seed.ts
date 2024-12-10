@@ -8,6 +8,8 @@ async function main() {
     data: {
       name: 'Test User',
       email: 'test@example.com',
+      password: 'test-password',
+      role: 'user'
     },
   })
 

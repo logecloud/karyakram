@@ -1,7 +1,11 @@
+'use client'
+import { Suspense } from 'react'
 import EventList from '@/app/components/EventList'
 import EventSearch from '@/app/components/EventSearch'
 
-export default function EventsPage() {
+// Create a separate component that uses useSearchParams
+function EventsContent() {
+  // ... rest of your component logic
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header Section */}
@@ -52,3 +56,12 @@ export default function EventsPage() {
     </div>
   )
 }
+
+// Main page component
+export default function EventsPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <EventsContent />
+    </Suspense>
+  )
+} 
