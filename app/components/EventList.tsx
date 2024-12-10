@@ -1,10 +1,19 @@
 import { prisma } from '@/app/lib/prisma'
 import Link from 'next/link'
 
+interface Event {
+  id: string
+  title: string
+  description: string
+  date: Date
+  organizer: {
+    name: string | null
+  }
+}
+
 interface EventListProps {
   featured?: boolean
   limit?: number
-  searchQuery?: string
 }
 
 async function getEvents(featured: boolean = false, limit?: number) {
@@ -32,12 +41,12 @@ async function getEvents(featured: boolean = false, limit?: number) {
   }
 }
 
-export default async function EventList({ featured = false, limit, searchQuery = '' }: EventListProps) {
+export default async function EventList({ featured = false, limit }: EventListProps) {
   const events = await getEvents(featured, limit)
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {events.map((event) => (
+      {events.map((event: Event) => (
         <div key={event.id} className="bg-white rounded-lg shadow-sm overflow-hidden">
           <div className="p-6">
             <h3 className="text-xl font-semibold text-gray-900 mb-2">

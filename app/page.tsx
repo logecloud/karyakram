@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-import AuthButton from "./components/AuthButton";
 import EventList from "./components/EventList";
 import EventSearch from "./components/EventSearch";
 
@@ -16,7 +14,7 @@ export default function Home() {
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Find and join the most exciting events in your area. From conferences to workshops, 
-              we've got something for everyone.
+              we&apos;ve got something for everyone.
             </p>
             <div className="max-w-xl mx-auto">
               <EventSearch />
