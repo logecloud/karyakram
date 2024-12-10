@@ -1,6 +1,6 @@
 'use client'
 
-import { useAuth } from "@/hooks/useAuth"
+import { useAuth } from "@/app/hooks/useAuth"
 
 export default function AdminPage() {
   const { session } = useAuth(['ADMIN', 'SUPER_ADMIN'])
