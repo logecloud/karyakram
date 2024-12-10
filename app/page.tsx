@@ -8,47 +8,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <main>
-        {/* Navigation Bar */}
-        <nav className="border-b bg-white/80 backdrop-blur-md fixed w-full z-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <Image 
-                  src="/logo.png" 
-                  alt="Event Hub Logo" 
-                  width={40} 
-                  height={40}
-                  className="rounded-lg"
-                />
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Karyakram
-                </h1>
-              </div>
-              <div className="flex items-center gap-6">
-                <Link 
-                  href="/events" 
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
-                >
-                  Browse Events
-                </Link>
-                <Link 
-                  href="/dashboard" 
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
-                >
-                  Dashboard
-                </Link>
-                <Link 
-                  href="/admin/events" 
-                  className="text-gray-600 hover:text-blue-600 transition-colors"
-                >
-                  Manage Events
-                </Link>
-                <AuthButton />
-              </div>
-            </div>
-          </div>
-        </nav>
-
         {/* Hero Section */}
         <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
